@@ -1,6 +1,8 @@
 name: First Github Action
 
-on: pull_request_target
+on:
+  pull_request:
+  push:
   
 jobs:
   SwiftLint:
@@ -8,8 +10,8 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - uses: hmarr/auto-approve-action@v4
       - uses: actions/checkout@v1
-      - name: GitHub Action for SwiftLint
-        uses: norio-nomura/action-swiftlint@3.2.1
-      
+      - uses: hmarr/auto-approve-action@v4
+      - name: go-mnd
+        uses: tommy-muehle/go-mnd@v2.5.1
+            
