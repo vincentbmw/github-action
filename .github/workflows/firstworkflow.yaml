@@ -1,0 +1,15 @@
+name: First Github Action
+
+on: pull_request_target
+  
+jobs:
+  SwiftLint:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: hmarr/auto-approve-action@v4
+      - uses: actions/checkout@v1
+      - name: GitHub Action for SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1
+      
